@@ -39,13 +39,13 @@ sudo apt-get update -y
 # Install Chrome Remote Desktop
 install_package "$chrome_remote_desktop_url"
 
-# Install XFCE desktop environment
-log "Installing XFCE desktop environment"
-sudo DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes xfce4 desktop-base dbus-x11 xscreensaver
+# Install GNOME desktop environment
+log "Installing GNOME desktop environment"
+sudo DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes gnome-session gnome-terminal gnome-control-center
 
 # Set up Chrome Remote Desktop session
 log "Setting up Chrome Remote Desktop session"
-sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
+sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/gnome-session" > /etc/chrome-remote-desktop-session'
 
 # Disable lightdm service
 log "Disabling lightdm service"
